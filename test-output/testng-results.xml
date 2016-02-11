@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="159819" started-at="2016-02-11T10:08:54Z" finished-at="2016-02-11T10:11:34Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="159819" started-at="2016-02-11T10:08:54Z" finished-at="2016-02-11T10:11:34Z">
+      <class name="GenericMethods.LogIn">
+        <test-method status="PASS" signature="LogIn_Generic()[pri:0, instance:GenericMethods.LogIn@173940bb]" name="LogIn_Generic" duration-ms="159794" started-at="2016-02-11T15:38:54Z" finished-at="2016-02-11T15:41:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LogIn_Generic -->
+      </class> <!-- GenericMethods.LogIn -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
