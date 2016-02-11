@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="159819" started-at="2016-02-11T10:08:54Z" finished-at="2016-02-11T10:11:34Z">
+  <suite name="Default suite" duration-ms="158137" started-at="2016-02-11T11:48:51Z" finished-at="2016-02-11T11:51:29Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="159819" started-at="2016-02-11T10:08:54Z" finished-at="2016-02-11T10:11:34Z">
+    <test name="Default test" duration-ms="158137" started-at="2016-02-11T11:48:51Z" finished-at="2016-02-11T11:51:29Z">
       <class name="GenericMethods.LogIn">
-        <test-method status="PASS" signature="LogIn_Generic()[pri:0, instance:GenericMethods.LogIn@173940bb]" name="LogIn_Generic" duration-ms="159794" started-at="2016-02-11T15:38:54Z" finished-at="2016-02-11T15:41:34Z">
+        <test-method status="PASS" signature="LogIn_Generic()[pri:0, instance:GenericMethods.LogIn@1fe398a0]" name="LogIn_Generic" duration-ms="158114" started-at="2016-02-11T17:18:51Z" finished-at="2016-02-11T17:21:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LogIn_Generic -->
