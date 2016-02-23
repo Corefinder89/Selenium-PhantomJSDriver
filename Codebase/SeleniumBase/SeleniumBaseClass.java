@@ -15,6 +15,7 @@ public class SeleniumBaseClass
 {
 	FileReader instream;
 	private PhantomJSDriver driver;
+	
 	public String getURLFromConfigFile(String variable)
 	{
 		String value="";
@@ -152,12 +153,14 @@ public class SeleniumBaseClass
 	
 	public WebDriver CheckDriverConfigurations()
 	{
-		String[] cli_args = new String[]{ "--ignore-ssl-errors=true" };
+		String[] cli_args = new String[]{"--ignore-ssl-errors=true"};
 		/*Desired capabilities is used to configure the driver instance of webdriver. All driver instances can be configured using
 		 *desired capability class	
 		 */
 	    Capabilities caps = new DesiredCapabilities();
-	    
+	    /*
+	     * 
+	     */
 	    ((DesiredCapabilities) caps).setCapability(PhantomJSDriverService.PHANTOMJS_CLI_ARGS, cli_args);
 	    /*
 	     * Enable javascript for browser
@@ -177,7 +180,8 @@ public class SeleniumBaseClass
 		 /*
 		  * return capability instance to increase reusability of capability
 		  */
-		 WebDriver driver = new PhantomJSDriver(caps);
+		 
+		 this.driver = new PhantomJSDriver(caps);
 		 return driver;	
 	}
 }

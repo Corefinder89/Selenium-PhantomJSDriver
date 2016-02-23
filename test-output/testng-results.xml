@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite1" duration-ms="155969" started-at="2016-02-23T06:17:30Z" finished-at="2016-02-23T06:20:06Z">
+  <suite name="Default suite" duration-ms="108020" started-at="2016-02-23T10:20:44Z" finished-at="2016-02-23T10:22:32Z">
     <groups>
     </groups>
-    <test name="Test_Scenarios" duration-ms="155969" started-at="2016-02-23T06:17:30Z" finished-at="2016-02-23T06:20:06Z">
+    <test name="Default test" duration-ms="108020" started-at="2016-02-23T10:20:44Z" finished-at="2016-02-23T10:22:32Z">
       <class name="Scenarios.Scenarios">
-        <test-method status="PASS" signature="GetRequiredPage()[pri:0, instance:Scenarios.Scenarios@52f235bf]" name="GetRequiredPage" is-config="true" duration-ms="34392" started-at="2016-02-23T11:47:30Z" finished-at="2016-02-23T11:48:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- GetRequiredPage -->
-        <test-method status="PASS" signature="SignIn()[pri:0, instance:Scenarios.Scenarios@52f235bf]" name="SignIn" duration-ms="121562" started-at="2016-02-23T11:48:04Z" finished-at="2016-02-23T11:50:06Z">
+        <test-method status="PASS" signature="SignIn()[pri:1, instance:Scenarios.Scenarios@7e9d672e]" name="SignIn" duration-ms="103711" started-at="2016-02-23T15:50:44Z" finished-at="2016-02-23T15:52:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SignIn -->
+        <test-method status="PASS" signature="MyProfile()[pri:2, instance:Scenarios.Scenarios@7e9d672e]" name="MyProfile" duration-ms="4279" started-at="2016-02-23T15:52:28Z" finished-at="2016-02-23T15:52:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- MyProfile -->
       </class> <!-- Scenarios.Scenarios -->
-    </test> <!-- Test_Scenarios -->
-  </suite> <!-- Suite1 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
