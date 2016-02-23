@@ -1,4 +1,4 @@
-package GenericMethods;
+package Scenarios;
 
 class Sleep
 {

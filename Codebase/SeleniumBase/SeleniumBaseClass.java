@@ -4,13 +4,17 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
+
 import org.openqa.selenium.Capabilities;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriverService;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class SeleniumBaseClass
 {
 	FileReader instream;
+	private PhantomJSDriver driver;
 	public String getURLFromConfigFile(String variable)
 	{
 		String value="";
@@ -24,7 +28,7 @@ public class SeleniumBaseClass
 	        /*
 	         * Absolute path for config.properties file
 	         */
-			String path="/Users/soumyajit/Documents/HTMLUnit/WELLKEPT/Codebase/Configuration/Config.properties";
+			String path="/Users/soumyajit/Documents/Selenium-GhostDriver/Codebase/Configuration/Config.properties";
 			/*
 			 * instream is an instance of FileReader and will read the contents of the config.properties file
 			 */
@@ -69,7 +73,7 @@ public class SeleniumBaseClass
 	        /*
 	         * Absolute path for config.properties file
 	         */
-			String path="/Users/soumyajit/Documents/HTMLUnit/WELLKEPT/Codebase/Configuration/Config.properties";
+			String path="/Users/soumyajit/Documents/Selenium-GhostDriver/Codebase/Configuration/Config.properties";
 			/*
 			 * instream is an instance of FileReader and will read the contents of the config.properties file
 			 */
@@ -114,7 +118,7 @@ public class SeleniumBaseClass
 	        /*
 	         * Absolute path for config.properties file
 	         */
-			String path="/Users/soumyajit/Documents/HTMLUnit/WELLKEPT/Codebase/Configuration/Config.properties";
+			String path="/Users/soumyajit/Documents/Selenium-GhostDriver/Codebase/Configuration/Config.properties";
 			/*
 			 * instream is an instance of FileReader and will read the contents of the config.properties file
 			 */
@@ -146,12 +150,15 @@ public class SeleniumBaseClass
 		return value;
 	}
 	
-	public Capabilities CheckDriverConfigurations()
+	public WebDriver CheckDriverConfigurations()
 	{
+		String[] cli_args = new String[]{ "--ignore-ssl-errors=true" };
 		/*Desired capabilities is used to configure the driver instance of webdriver. All driver instances can be configured using
 		 *desired capability class	
 		 */
 	    Capabilities caps = new DesiredCapabilities();
+	    
+	    ((DesiredCapabilities) caps).setCapability(PhantomJSDriverService.PHANTOMJS_CLI_ARGS, cli_args);
 	    /*
 	     * Enable javascript for browser
 	     */
@@ -159,7 +166,7 @@ public class SeleniumBaseClass
 	    /*
 	     * Set capability to take screenshot
 	     */
-		 ((DesiredCapabilities) caps).setCapability("takesScreenshot", true);
+		 ((DesiredCapabilities) caps).setCapability("takesScreenshot", false);
 		 /*
 		  * Set capability for the executable path for phantomjs
 		  */
@@ -170,6 +177,7 @@ public class SeleniumBaseClass
 		 /*
 		  * return capability instance to increase reusability of capability
 		  */
-		 return caps;	
+		 WebDriver driver = new PhantomJSDriver(caps);
+		 return driver;	
 	}
 }
