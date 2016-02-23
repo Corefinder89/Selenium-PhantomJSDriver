@@ -4,6 +4,8 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import SeleniumBase.SeleniumBaseClass;
@@ -38,14 +40,25 @@ public class Scenarios extends SeleniumBaseClass
 	
 	boolean flag;
 	
-	@Test(priority=1)
-	public void SignIn() throws InterruptedException
+	@BeforeTest
+	public void getCurrentPage()
 	{
+		/*
+		 * Put an implicit wait before hitting the URL so that the driver can configure the seetings for the particular driver instance
+		 */
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		/*
+		 * 1. Get the page for the desired URL.
+		 * 2. Wait for sometime for the required element to load.
+		 */
 		driver.get(url);
         System.out.println("Event 1: Entered URL: " +url); 
         s.WaitForElement(30000);
-        
+	}
+	
+	@Test(priority=1)
+	public void SignIn() throws InterruptedException
+	{
         /*
          * 1. Get xpath of the sign in button
          * 2. Clcik on Sign In link
@@ -102,10 +115,22 @@ public class Scenarios extends SeleniumBaseClass
 	@Test(priority=2)
 	public void SpotCleaning()
 	{
+		/*
+		 * 1. Get xpath for the button Book Room Cleaning.
+		 * 2. Click on the button Book room cleaning to proceed forward.
+		 * 3. Wait for sometime for the next element to load.
+		 */
 		driver.findElement(By.xpath("//div[@class='heading' and contains(text(),'Book room cleaning')]")).click();
 		System.out.println("Event 8: Clicked on BookRoomCleaning");
 		s.WaitForElement(3000);
-		
+	}
+	
+	@AfterTest
+	public void FinishAutomation()
+	{
+		/*
+		 * Exit phantomjs driver execution
+		 */
 		driver.quit();
 	}
 }
