@@ -6,7 +6,7 @@
       <class name="Scenarios.Scenarios">
         <methods>
           <include name="FinishAutomation"/>
-          <include name="Whole_Home"/>
+          <include name="Subscribe"/>
           <include name="getCurrentPage"/>
         </methods>
       </class> <!-- Scenarios.Scenarios -->

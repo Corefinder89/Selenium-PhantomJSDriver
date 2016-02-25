@@ -183,6 +183,17 @@ public class Scenarios extends SeleniumBaseClass
 		s.WaitForElement(3000);
 	}
 	
+	@Test(priority=4)
+	public void Subscribe() throws InterruptedException
+	{
+		/*
+		 * Enter email for subscription
+		 */
+		driver.findElement(By.xpath("//input[@type='email']")).sendKeys(username);
+		System.out.println("Event 11: Entered email for subscription: " +username);
+		s.WaitForElement(3000);
+	}
+	
 	@AfterTest
 	public void FinishAutomation()
 	{
