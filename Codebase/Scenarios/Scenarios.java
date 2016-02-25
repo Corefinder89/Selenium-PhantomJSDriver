@@ -1,15 +1,15 @@
 package Scenarios;
 
 import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+
 import SeleniumBase.SeleniumBaseClass;
 
 public class Scenarios extends SeleniumBaseClass
@@ -114,35 +114,73 @@ public class Scenarios extends SeleniumBaseClass
         softAssert.assertTrue(flag);
 	
         System.out.println("Event 7: Assertion for log in passed");
-        s.WaitForElement(30000);
 	}
 	
 	@Test(priority=2)
-	public void General_Functions() throws InterruptedException
+	public void Spot_Clean() throws InterruptedException
 	{
 		/*
-		 * 1. Click on Book Room Cleaning
-		 * 2. Click on the button Book Room Cleaning
-		 * 3. Wait for sometime for the next element to load
+		 * 1. Click on the Book room cleaning button
+		 * 2. Wait for the page to load
 		 */
-		WebElement scroll = driver.findElement(By.xpath("//div[@class='row wrapper']"));
-		scroll.sendKeys(Keys.PAGE_DOWN);
-		 System.out.println("Event 8: Scrolled down below the page");
-		 s.WaitForElement(3000);
-		 WebElement element1 = driver.findElement(By.xpath("//a[contains(text(),'Room cleaning')]"));
-		 element1.click();
-		 System.out.println("Event 8: Clicked on room cleaning");
-		 s.WaitForElement(3000);
+		driver.findElement(By.xpath("//div[@class='heading' and contains(text(),'Book room cleaning')]")).click();
+		System.out.println("Event 8: Clicked on button for spot cleaning page");
+		s.WaitForElement(3000);
+		
+		/* 
+         * 1. Get the following element from the web page.
+         * 2. Store the element into a String variable.
+         * 3. Assertion applied to check whether the correct user has logged into the system or not
+         * 4. Check assertion by using AssertTrue based on the boolean variable value flag
+         */
+		WebElement element1 = driver.findElement(By.xpath("//h3[contains(text(),'Your Custom Room Cleaning')]"));
+		String expected_element1 = element1.getText().toString();
+		System.out.println("Event 9: Expected element is: " +expected_element1);
+		String actual_element1 = "Your Custom Room Cleaning";
+		if(expected_element1.equals(actual_element1))
+			flag = true;
+		else
+			flag = false;
+		
+		softAssert.assertTrue(flag);
+		System.out.println("Event 10: Assertion for whole home clean page passed");
+		s.WaitForElement(3000);
 		
 		/*
-		 * 1. Get the following email from the webpage
-		 * 2. Store the element into a String variable.
-		 * 3. Assertion applied to check whether the correct page has been loaded or not
-		 * 4. Check assertion by AssertTrue based on the boolean variable value flag  
+		 * Redirect to the home page
 		 */
-//		WebElement element2 = driver.findElement(By.xpath("//h3[contains(text(),'Your Custom Room Cleaning')]"));
-//		String expected_element = element2.getText().toString();
-//		System.out.println("Event 9: Expected element when the spot booking page loads: " +expected_element);
+		driver.findElement(By.xpath("//img[@src='/css/images/logo.png']")).click();
+		System.out.println("Event 11: Back to Home Page");
+	}
+	
+	@Test(priority=3)
+	public void Whole_Home() throws InterruptedException
+	{
+		/*
+		 * Click on the whole home clean button
+		 */
+		driver.findElement(By.xpath("//div[@class='heading' and contains(text(),'Calculate home cleaning')]")).click();
+		System.out.println("Event 12: Clicked on button for whole home cleaning page");
+		s.WaitForElement(3000);
+		
+		/* 
+         * 1. Get the following element from the web page.
+         * 2. Store the element into a String variable.
+         * 3. Assertion applied to check whether the correct user has logged into the system or not
+         * 4. Check assertion by using AssertTrue based on the boolean variable value flag
+         */
+		WebElement element1 = driver.findElement(By.xpath("//h3[contains(text(),'Your Custom Home Cleaning')]"));
+		String expected_element1 = element1.getText().toString();
+		System.out.println("Event 9: Expected element is: " +expected_element1);
+		String actual_element1 = "Your Custom Home Cleaning";
+		if(expected_element1.equals(actual_element1))
+			flag = true;
+		else
+			flag = false;
+		
+		softAssert.assertTrue(flag);
+		System.out.println("Event 10: Assertion for spot clean page passed");
+		s.WaitForElement(3000);
 	}
 	
 	@AfterTest

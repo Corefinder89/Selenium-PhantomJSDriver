@@ -164,7 +164,7 @@ public class SeleniumBaseClass
 	    /*
 	     * Set capability to take screenshot
 	     */
-		 ((DesiredCapabilities) caps).setCapability("takesScreenshot", false);
+		 ((DesiredCapabilities) caps).setCapability("takesScreenshot", true);
 		 /*
 		  * Set capability for the executable path for phantomjs
 		  */

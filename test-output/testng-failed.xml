@@ -6,7 +6,7 @@
       <class name="Scenarios.Scenarios">
         <methods>
           <include name="FinishAutomation"/>
-          <include name="General_Functions"/>
+          <include name="Whole_Home"/>
           <include name="getCurrentPage"/>
         </methods>
       </class> <!-- Scenarios.Scenarios -->
