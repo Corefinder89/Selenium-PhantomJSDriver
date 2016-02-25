@@ -2,6 +2,8 @@ package Scenarios;
 
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterTest;
@@ -95,8 +97,11 @@ public class Scenarios extends SeleniumBaseClass
         System.out.println("Event 5: Clicked on Login");
         s.WaitForElement(3000);
         
-        /*
-         * Assertion applied to check whether the correct user has logged into the system or not
+        /* 
+         * 1. Get the following email from the webpage.
+         * 2. Store the element into a String variable.
+         * 3. Assertion applied to check whether the correct user has logged into the system or not
+         * 4. Check assertion by using AssertTrue based on the boolean variable value flag
          */
         String actual_element_signin = "TESTSTAGING3@MAILINATOR.COM";
         WebElement element = driver.findElement(By.xpath("//a[contains(text(),'teststaging3@mailinator.com')]"));
@@ -113,16 +118,31 @@ public class Scenarios extends SeleniumBaseClass
 	}
 	
 	@Test(priority=2)
-	public void SpotCleaning()
+	public void General_Functions() throws InterruptedException
 	{
 		/*
-		 * 1. Get xpath for the button Book Room Cleaning.
-		 * 2. Click on the button Book room cleaning to proceed forward.
-		 * 3. Wait for sometime for the next element to load.
+		 * 1. Click on Book Room Cleaning
+		 * 2. Click on the button Book Room Cleaning
+		 * 3. Wait for sometime for the next element to load
 		 */
-		driver.findElement(By.xpath("//div[@class='heading' and contains(text(),'Book room cleaning')]")).click();
-		System.out.println("Event 8: Clicked on BookRoomCleaning");
-		s.WaitForElement(3000);
+		WebElement scroll = driver.findElement(By.xpath("//div[@class='row wrapper']"));
+		scroll.sendKeys(Keys.PAGE_DOWN);
+		 System.out.println("Event 8: Scrolled down below the page");
+		 s.WaitForElement(3000);
+		 WebElement element1 = driver.findElement(By.xpath("//a[contains(text(),'Room cleaning')]"));
+		 element1.click();
+		 System.out.println("Event 8: Clicked on room cleaning");
+		 s.WaitForElement(3000);
+		
+		/*
+		 * 1. Get the following email from the webpage
+		 * 2. Store the element into a String variable.
+		 * 3. Assertion applied to check whether the correct page has been loaded or not
+		 * 4. Check assertion by AssertTrue based on the boolean variable value flag  
+		 */
+//		WebElement element2 = driver.findElement(By.xpath("//h3[contains(text(),'Your Custom Room Cleaning')]"));
+//		String expected_element = element2.getText().toString();
+//		System.out.println("Event 9: Expected element when the spot booking page loads: " +expected_element);
 	}
 	
 	@AfterTest

@@ -1,25 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="2" passed="2">
+<testng-results skipped="0" failed="1" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="94197" started-at="2016-02-23T10:37:32Z" finished-at="2016-02-23T10:39:06Z">
+  <suite name="Default suite" duration-ms="102955" started-at="2016-02-25T11:09:51Z" finished-at="2016-02-25T11:11:34Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="94197" started-at="2016-02-23T10:37:32Z" finished-at="2016-02-23T10:39:06Z">
+    <test name="Default test" duration-ms="102955" started-at="2016-02-25T11:09:51Z" finished-at="2016-02-25T11:11:34Z">
       <class name="Scenarios.Scenarios">
-        <test-method status="PASS" signature="getCurrentPage()[pri:0, instance:Scenarios.Scenarios@40949d89]" name="getCurrentPage" is-config="true" duration-ms="47548" started-at="2016-02-23T16:07:32Z" finished-at="2016-02-23T16:08:20Z">
+        <test-method status="PASS" signature="getCurrentPage()[pri:0, instance:Scenarios.Scenarios@193ff426]" name="getCurrentPage" is-config="true" duration-ms="43852" started-at="2016-02-25T16:39:51Z" finished-at="2016-02-25T16:40:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getCurrentPage -->
-        <test-method status="PASS" signature="SignIn()[pri:1, instance:Scenarios.Scenarios@40949d89]" name="SignIn" duration-ms="42470" started-at="2016-02-23T16:08:20Z" finished-at="2016-02-23T16:09:02Z">
+        <test-method status="PASS" signature="SignIn()[pri:1, instance:Scenarios.Scenarios@193ff426]" name="SignIn" duration-ms="42500" started-at="2016-02-25T16:40:35Z" finished-at="2016-02-25T16:41:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SignIn -->
-        <test-method status="PASS" signature="SpotCleaning()[pri:2, instance:Scenarios.Scenarios@40949d89]" name="SpotCleaning" duration-ms="3070" started-at="2016-02-23T16:09:02Z" finished-at="2016-02-23T16:09:05Z">
+        <test-method status="FAIL" signature="General_Functions()[pri:2, instance:Scenarios.Scenarios@193ff426]" name="General_Functions" duration-ms="15039" started-at="2016-02-25T16:41:17Z" finished-at="2016-02-25T16:41:32Z">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[{"errorMessage":"Unable to find element with xpath '//div[@class='row wrapper']'","request":{"headers":{"Accept-Encoding":"gzip,deflate","Connection":"Keep-Alive","Content-Length":"55","Content-Type":"application/json; charset=utf-8","Host":"localhost:11555","User-Agent":"Apache-HttpClient/4.5.1 (Java/1.7.0_71)"},"httpVersion":"1.1","method":"POST","post":"{\"using\":\"xpath\",\"value\":\"//div[@class='row wrapper']\"}","url":"/element","urlParsed":{"anchor":"","query":"","file":"element","directory":"/","path":"/element","relative":"/element","port":"","host":"","password":"","user":"","userInfo":"","authority":"","protocol":"","source":"/element","queryKey":{},"chunks":["element"]},"urlOriginal":"/session/4a3f2f10-dbb0-11e5-bf08-fd888a5b95cb/element"}}
+Command duration or timeout: 15.03 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.49.1', revision: 'b41a073', time: '2016-01-21 17:32:24'
+System info: host: 'N/A', ip: 'N/A', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.10.5', java.version: '1.7.0_71'
+*** Element info: {Using=xpath, value=//div[@class='row wrapper']}
+Session ID: 4a3f2f10-dbb0-11e5-bf08-fd888a5b95cb
+Driver info: org.openqa.selenium.phantomjs.PhantomJSDriver
+Capabilities [{platform=OS X 10.10, acceptSslCerts=false, javascriptEnabled=true, browserName=phantomjs, rotatable=false, driverVersion=1.2.0, locationContextEnabled=false, version=2.1.1, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=false, browserConnectionEnabled=false, proxy={proxyType=direct}, nativeEvents=true, webStorageEnabled=false, driverName=ghostdriver, applicationCacheEnabled=false, takesScreenshot=false}]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: {"errorMessage":"Unable to find element with xpath '//div[@class='row wrapper']'","request":{"headers":{"Accept-Encoding":"gzip,deflate","Connection":"Keep-Alive","Content-Length":"55","Content-Type":"application/json; charset=utf-8","Host":"localhost:11555","User-Agent":"Apache-HttpClient/4.5.1 (Java/1.7.0_71)"},"httpVersion":"1.1","method":"POST","post":"{\"using\":\"xpath\",\"value\":\"//div[@class='row wrapper']\"}","url":"/element","urlParsed":{"anchor":"","query":"","file":"element","directory":"/","path":"/element","relative":"/element","port":"","host":"","password":"","user":"","userInfo":"","authority":"","protocol":"","source":"/element","queryKey":{},"chunks":["element"]},"urlOriginal":"/session/4a3f2f10-dbb0-11e5-bf08-fd888a5b95cb/element"}}
+Command duration or timeout: 15.03 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.49.1', revision: 'b41a073', time: '2016-01-21 17:32:24'
+System info: host: 'N/A', ip: 'N/A', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.10.5', java.version: '1.7.0_71'
+*** Element info: {Using=xpath, value=//div[@class='row wrapper']}
+Session ID: 4a3f2f10-dbb0-11e5-bf08-fd888a5b95cb
+Driver info: org.openqa.selenium.phantomjs.PhantomJSDriver
+Capabilities [{platform=OS X 10.10, acceptSslCerts=false, javascriptEnabled=true, browserName=phantomjs, rotatable=false, driverVersion=1.2.0, locationContextEnabled=false, version=2.1.1, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=false, browserConnectionEnabled=false, proxy={proxyType=direct}, nativeEvents=true, webStorageEnabled=false, driverName=ghostdriver, applicationCacheEnabled=false, takesScreenshot=false}]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at Scenarios.Scenarios.General_Functions(Scenarios.java:128)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:112)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:205)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:176)
+Caused by: org.openqa.selenium.remote.ScreenshotException: Screen shot has been taken
+Build info: version: '2.49.1', revision: 'b41a073', time: '2016-01-21 17:32:24'
+System info: host: 'N/A', ip: 'N/A', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.10.5', java.version: '1.7.0_71'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:138)
+	... 30 more
+Caused by: org.openqa.selenium.NoSuchElementException: {"errorMessage":"Unable to find element with xpath '//div[@class='row wrapper']'","request":{"headers":{"Accept-Encoding":"gzip,deflate","Connection":"Keep-Alive","Content-Length":"55","Content-Type":"application/json; charset=utf-8","Host":"localhost:11555","User-Agent":"Apache-HttpClient/4.5.1 (Java/1.7.0_71)"},"httpVersion":"1.1","method":"POST","post":"{\"using\":\"xpath\",\"value\":\"//div[@class='row wrapper']\"}","url":"/element","urlParsed":{"anchor":"","query":"","file":"element","directory":"/","path":"/element","relative":"/element","port":"","host":"","password":"","user":"","userInfo":"","authority":"","protocol":"","source":"/element","queryKey":{},"chunks":["element"]},"urlOriginal":"/session/4a3f2f10-dbb0-11e5-bf08-fd888a5b95cb/element"}}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.49.1', revision: 'b41a073', time: '2016-01-21 17:32:24'
+System info: host: 'N/A', ip: 'N/A', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.10.5', java.version: '1.7.0_71'
+Driver info: driver.version: unknown
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SpotCleaning -->
-        <test-method status="PASS" signature="FinishAutomation()[pri:0, instance:Scenarios.Scenarios@40949d89]" name="FinishAutomation" is-config="true" duration-ms="1089" started-at="2016-02-23T16:09:05Z" finished-at="2016-02-23T16:09:06Z">
+        </test-method> <!-- General_Functions -->
+        <test-method status="PASS" signature="FinishAutomation()[pri:0, instance:Scenarios.Scenarios@193ff426]" name="FinishAutomation" is-config="true" duration-ms="1081" started-at="2016-02-25T16:41:33Z" finished-at="2016-02-25T16:41:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- FinishAutomation -->

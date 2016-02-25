@@ -5,7 +5,9 @@
     <classes>
       <class name="Scenarios.Scenarios">
         <methods>
-          <include name="MyProfile"/>
+          <include name="FinishAutomation"/>
+          <include name="General_Functions"/>
+          <include name="getCurrentPage"/>
         </methods>
       </class> <!-- Scenarios.Scenarios -->
     </classes>
