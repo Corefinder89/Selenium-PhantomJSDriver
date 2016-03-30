@@ -3,6 +3,7 @@ package SeleniumBase;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.Driver;
 import java.util.Properties;
 
 import org.openqa.selenium.Capabilities;
@@ -161,10 +162,6 @@ public class SeleniumBaseClass
 	     * Enable javascript for browser
 	     */
 	    ((DesiredCapabilities) caps).setJavascriptEnabled(true);
-	    /*
-	     * Set capability to take screenshot
-	     */
-		 ((DesiredCapabilities) caps).setCapability("takesScreenshot", true);
 		 /*
 		  * Set capability for the executable path for phantomjs
 		  */
@@ -172,11 +169,12 @@ public class SeleniumBaseClass
 		        PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY,
 		        "//Users//soumyajit//Documents//Zippers//phantomjs//bin//phantomjs"
 		    );
+		 ((DesiredCapabilities) caps).setCapability(PhantomJSDriverService.PHANTOMJS_CLI_ARGS, new String[] {"--web-security=no", "--ignore-ssl-errors=yes"});
 		 /*
 		  * return capability instance to increase reusability of capability
 		  */
 		 
-		 this.driver = new PhantomJSDriver(caps);
+		 driver = new PhantomJSDriver(caps);
 		 return driver;	
 	}
 }

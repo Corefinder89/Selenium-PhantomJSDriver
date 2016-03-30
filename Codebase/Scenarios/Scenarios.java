@@ -1,5 +1,6 @@
 package Scenarios;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -40,10 +41,11 @@ public class Scenarios extends SeleniumBaseClass
 	 */
 	SoftAssert softAssert = new SoftAssert();
 	
+	Screenshots sc = new Screenshots();
 	boolean flag;
 	
 	@BeforeTest
-	public void getCurrentPage()
+	public void getCurrentPage() throws IOException
 	{
 		/*
 		 * Put an implicit wait before hitting the URL so that the driver can configure the seetings for the particular driver instance
@@ -56,10 +58,12 @@ public class Scenarios extends SeleniumBaseClass
 		driver.get(url);
         System.out.println("Event 1: Entered URL: " +url); 
         s.WaitForElement(30000);
+        sc.takeScreenshot();
+        s.WaitForElement(30000);
 	}
 	
 	@Test(priority=1)
-	public void SignIn() throws InterruptedException
+	public void SignIn() throws InterruptedException, IOException
 	{
         /*
          * 1. Get xpath of the sign in button
@@ -68,6 +72,8 @@ public class Scenarios extends SeleniumBaseClass
          */
         driver.findElement(By.xpath("//a[contains(text(),'SIGN IN')]")).click();
         System.out.println("Event 2: Clicked on Sign IN");
+        s.WaitForElement(3000);
+        sc.takeScreenshot();
         s.WaitForElement(3000);
         
         /*
@@ -78,6 +84,8 @@ public class Scenarios extends SeleniumBaseClass
         driver.findElement(By.name("email")).sendKeys(username);
         System.out.println("Event 3: Entered username: " +username);
         s.WaitForElement(3000);
+        sc.takeScreenshot();
+        s.WaitForElement(3000);
         
         /*
          * 1. Get the xpath for password.
@@ -86,6 +94,8 @@ public class Scenarios extends SeleniumBaseClass
          */
         driver.findElement(By.name("password")).sendKeys(password);
         System.out.println("Event 4: Entered password: " +password);
+        s.WaitForElement(3000);
+        sc.takeScreenshot();
         s.WaitForElement(3000);
         
         /*
